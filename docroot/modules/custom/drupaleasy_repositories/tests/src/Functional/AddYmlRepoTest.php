@@ -23,7 +23,12 @@ final class AddYmlRepoTest extends BrowserTestBase {
    *
    * Module required to be enabled for this test to work.
    */
-  protected static $modules = ['drupaleasy_repositories'];
+  protected static $modules = [
+    'drupaleasy_repositories',
+    'user',
+    'link',
+    'node',
+  ];
 
   /**
    * {@inheritdoc}
@@ -31,6 +36,9 @@ final class AddYmlRepoTest extends BrowserTestBase {
   protected function setUp(): void {
     parent::setUp();
     // Set up the test here.
+    $config = $this->config('drupaleasy_repositories.settings');
+    $config->set('repositories_plugin', ['yml_remote' => 'yml_remote']);
+    $config->save();
   }
 
   /**
