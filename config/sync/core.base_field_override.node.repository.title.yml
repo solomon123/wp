@@ -1,0 +1,18 @@
+uuid: 5d6e6346-6f4c-481b-a377-0d17e71fcb99
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.repository
+id: node.repository.title
+field_name: title
+entity_type: node
+bundle: repository
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

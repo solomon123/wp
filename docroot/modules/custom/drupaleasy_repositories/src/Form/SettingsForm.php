@@ -30,11 +30,12 @@ final class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
-    $form['example'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Example'),
-      '#default_value' => $this->config('drupaleasy_repositories.settings')->get('example'),
+    $form['repositories_plugin'] = [
+      '#type' => 'checkboxes',
+      '#title' => $this->t('Repository plugins'),
+      '#options' => ['yml_remote' => 'Yml remote'],
     ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -42,16 +43,6 @@ final class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
-    // @todo Validate the form here.
-    // Example:
-    // @code
-    //   if ($form_state->getValue('example') === 'wrong') {
-    //     $form_state->setErrorByName(
-    //       'message',
-    //       $this->t('The value is not correct.'),
-    //     );
-    //   }
-    // @endcode
     parent::validateForm($form, $form_state);
   }
 
