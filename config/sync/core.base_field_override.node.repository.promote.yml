@@ -1,0 +1,22 @@
+uuid: 5a7ac21e-b346-4e2d-8d84-d3916c925eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.repository
+id: node.repository.promote
+field_name: promote
+entity_type: node
+bundle: repository
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
